@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="changelog">CHANGELOG</h1>
+
+<h2 id="4.0.0">4.0.0</h2>
+
+<ul>
+<li> the <code>Request::setTrustedHeaderName()</code> and <code>Request::getTrustedHeaderName()</code>
+methods have been removed</li>
+<li> the <code>Request::HEADER_CLIENT_IP</code> constant has been removed, use
+<code>Request::HEADER_X_FORWARDED_FOR</code> instead</li>
+<li> the <code>Request::HEADER_CLIENT_HOST</code> constant has been removed, use
+<code>Request::HEADER_X_FORWARDED_HOST</code> instead</li>
+<li> the <code>Request::HEADER_CLIENT_PROTO</code> constant has been removed, use
+<code>Request::HEADER_X_FORWARDED_PROTO</code> instead</li>
+<li> the <code>Request::HEADER_CLIENT_PORT</code> constant has been removed, use
+<code>Request::HEADER_X_FORWARDED_PORT</code> instead</li>
+<li> checking for cacheable HTTP methods using the <code>Request::isMethodSafe()</code>
+method (by not passing <code>false</code> as its argument) is not supported anymore and
+throws a <code>\BadMethodCallException</code></li>
+<li> the <code>WriteCheckSessionHandler</code>, <code>NativeSessionHandler</code> and <code>NativeProxy</code> classes have been removed</li>
+<li> setting session save handlers that do not implement <code>\SessionHandlerInterface</code> in
+<code>NativeSessionStorage::setSaveHandler()</code> is not supported anymore and throws a
+<code>\TypeError</code></li>
+</ul>
+
+<h2 id="3.4.0">3.4.0</h2>
+
+<ul>
+<li> implemented PHP 7.0&#8217;s <code>SessionUpdateTimestampHandlerInterface</code> with a new
+<code>AbstractSessionHandler</code> base class and a new <code>StrictSessionHandler</code> wrapper</li>
+<li> deprecated the <code>WriteCheckSessionHandler</code>, <code>NativeSessionHandler</code> and <code>NativeProxy</code> classes</li>
+<li> deprecated setting session save handlers that do not implement <code>\SessionHandlerInterface</code> in <code>NativeSessionStorage::setSaveHandler()</code></li>
+<li> deprecated using <code>MongoDbSessionHandler</code> with the legacy mongo extension; use it with the mongodb/mongodb package and ext-mongodb instead</li>
+<li> deprecated <code>MemcacheSessionHandler</code>; use <code>MemcachedSessionHandler</code> instead</li>
+</ul>
+
+<h2 id="3.3.0">3.3.0</h2>
+
+<ul>
+<li> the <code>Request::setTrustedProxies()</code> method takes a new <code>$trustedHeaderSet</code> argument,
+see http://symfony.com/doc/current/components/http_foundation/trusting_proxies.html for more info,</li>
+<li> deprecated the <code>Request::setTrustedHeaderName()</code> and <code>Request::getTrustedHeaderName()</code> methods,</li>
+<li> added <code>File\Stream</code>, to be passed to <code>BinaryFileResponse</code> when the size of the served file is unknown,
+disabling <code>Range</code> and <code>Content-Length</code> handling, switching to chunked encoding instead</li>
+<li> added the <code>Cookie::fromString()</code> method that allows to create a cookie from a
+raw header string</li>
+</ul>
+
+<h2 id="3.1.0">3.1.0</h2>
+
+<ul>
+<li> Added support for creating <code>JsonResponse</code> with a string of JSON data</li>
+</ul>
+
+<h2 id="3.0.0">3.0.0</h2>
+
+<ul>
+<li> The precedence of parameters returned from <code>Request::get()</code> changed from &#8220;GET, PATH, BODY&#8221; to &#8220;PATH, GET, BODY&#8221;</li>
+</ul>
+
+<h2 id="2.8.0">2.8.0</h2>
+
+<ul>
+<li> Finding deep items in <code>ParameterBag::get()</code> is deprecated since version 2.8 and
+will be removed in 3.0.</li>
+</ul>
+
+<h2 id="2.6.0">2.6.0</h2>
+
+<ul>
+<li> PdoSessionHandler changes</li>
+<li> implemented different session locking strategies to prevent loss of data by concurrent access to the same session</li>
+<li> [BC BREAK] save session data in a binary column without base64_encode</li>
+<li> [BC BREAK] added lifetime column to the session table which allows to have different lifetimes for each session</li>
+<li> implemented lazy connections that are only opened when a session is used by either passing a dsn string
+ explicitly or falling back to session.save_path ini setting</li>
+<li> added a createTable method that initializes a correctly defined table depending on the database vendor</li>
+</ul>
+
+<h2 id="2.5.0">2.5.0</h2>
+
+<ul>
+<li> added <code>JsonResponse::setEncodingOptions()</code> &amp; <code>JsonResponse::getEncodingOptions()</code> for easier manipulation
+of the options used while encoding data to JSON format.</li>
+</ul>
+
+<h2 id="2.4.0">2.4.0</h2>
+
+<ul>
+<li> added RequestStack</li>
+<li> added Request::getEncodings()</li>
+<li> added accessors methods to session handlers</li>
+</ul>
+
+<h2 id="2.3.0">2.3.0</h2>
+
+<ul>
+<li> added support for ranges of IPs in trusted proxies</li>
+<li> <code>UploadedFile::isValid</code> now returns false if the file was not uploaded via HTTP (in a non-test mode)</li>
+<li> Improved error-handling of <code>\Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler</code>
+to ensure the supplied PDO handler throws Exceptions on error (as the class expects). Added related test cases
+to verify that Exceptions are properly thrown when the PDO queries fail.</li>
+</ul>
+
+<h2 id="2.2.0">2.2.0</h2>
+
+<ul>
+<li> fixed the Request::create() precedence (URI information always take precedence now)</li>
+<li> added Request::getTrustedProxies()</li>
+<li> deprecated Request::isProxyTrusted()</li>
+<li> [BC BREAK] JsonResponse does not turn a top level empty array to an object anymore, use an ArrayObject to enforce objects</li>
+<li> added a IpUtils class to check if an IP belongs to a CIDR</li>
+<li> added Request::getRealMethod() to get the &#8220;real&#8221; HTTP method (getMethod() returns the &#8220;intended&#8221; HTTP method)</li>
+<li> disabled _method request parameter support by default (call Request::enableHttpMethodParameterOverride() to
+enable it, and Request::getHttpMethodParameterOverride() to check if it is supported)</li>
+<li> Request::splitHttpAcceptHeader() method is deprecated and will be removed in 2.3</li>
+<li> Deprecated Flashbag::count() and \Countable interface, will be removed in 2.3</li>
+</ul>
+
+<h2 id="2.1.0">2.1.0</h2>
+
+<ul>
+<li> added Request::getSchemeAndHttpHost() and Request::getUserInfo()</li>
+<li> added a fluent interface to the Response class</li>
+<li> added Request::isProxyTrusted()</li>
+<li> added JsonResponse</li>
+<li> added a getTargetUrl method to RedirectResponse</li>
+<li> added support for streamed responses</li>
+<li> made Response::prepare() method the place to enforce HTTP specification</li>
+<li> [BC BREAK] moved management of the locale from the Session class to the Request class</li>
+<li> added a generic access to the PHP built-in filter mechanism: ParameterBag::filter()</li>
+<li> made FileBinaryMimeTypeGuesser command configurable</li>
+<li> added Request::getUser() and Request::getPassword()</li>
+<li> added support for the PATCH method in Request</li>
+<li> removed the ContentTypeMimeTypeGuesser class as it is deprecated and never used on PHP 5.3</li>
+<li> added ResponseHeaderBag::makeDisposition() (implements RFC 6266)</li>
+<li> made mimetype to extension conversion configurable</li>
+<li> [BC BREAK] Moved all session related classes and interfaces into own namespace, as
+<code>Symfony\Component\HttpFoundation\Session</code> and renamed classes accordingly.
+Session handlers are located in the subnamespace <code>Symfony\Component\HttpFoundation\Session\Handler</code>.</li>
+<li> SessionHandlers must implement <code>\SessionHandlerInterface</code> or extend from the
+<code>Symfony\Component\HttpFoundation\Storage\Handler\NativeSessionHandler</code> base class.</li>
+<li> Added internal storage driver proxy mechanism for forward compatibility with
+PHP 5.4 <code>\SessionHandler</code> class.</li>
+<li> Added session handlers for custom Memcache, Memcached and Null session save handlers.</li>
+<li> [BC BREAK] Removed <code>NativeSessionStorage</code> and replaced with <code>NativeFileSessionHandler</code>.</li>
+<li> [BC BREAK] <code>SessionStorageInterface</code> methods removed: <code>write()</code>, <code>read()</code> and
+<code>remove()</code>. Added <code>getBag()</code>, <code>registerBag()</code>. The <code>NativeSessionStorage</code> class
+is a mediator for the session storage internals including the session handlers
+which do the real work of participating in the internal PHP session workflow.</li>
+<li> [BC BREAK] Introduced mock implementations of <code>SessionStorage</code> to enable unit
+and functional testing without starting real PHP sessions. Removed
+<code>ArraySessionStorage</code>, and replaced with <code>MockArraySessionStorage</code> for unit
+tests; removed <code>FilesystemSessionStorage</code>, and replaced with<code>MockFileSessionStorage</code>
+for functional tests. These do not interact with global session ini
+configuration values, session functions or <code>$_SESSION</code> superglobal. This means
+they can be configured directly allowing multiple instances to work without
+conflicting in the same PHP process.</li>
+<li> [BC BREAK] Removed the <code>close()</code> method from the <code>Session</code> class, as this is
+now redundant.</li>
+<li> Deprecated the following methods from the Session class: <code>setFlash()</code>, <code>setFlashes()</code>
+<code>getFlash()</code>, <code>hasFlash()</code>, and <code>removeFlash()</code>. Use <code>getFlashBag()</code> instead
+which returns a <code>FlashBagInterface</code>.</li>
+<li> <code>Session-&gt;clear()</code> now only clears session attributes as before it cleared
+flash messages and attributes. <code>Session-&gt;getFlashBag()-&gt;all()</code> clears flashes now.</li>
+<li> Session data is now managed by <code>SessionBagInterface</code> to better encapsulate
+session data.</li>
+<li> Refactored session attribute and flash messages system to their own
+<code>SessionBagInterface</code> implementations.</li>
+<li> Added <code>FlashBag</code>. Flashes expire when retrieved by <code>get()</code> or <code>all()</code>. This
+implementation is ESI compatible.</li>
+<li> Added <code>AutoExpireFlashBag</code> (default) to replicate Symfony 2.0.x auto expire
+behaviour of messages auto expiring after one page page load. Messages must
+be retrieved by <code>get()</code> or <code>all()</code>.</li>
+<li> Added <code>Symfony\Component\HttpFoundation\Attribute\AttributeBag</code> to replicate
+attributes storage behaviour from 2.0.x (default).</li>
+<li> Added <code>Symfony\Component\HttpFoundation\Attribute\NamespacedAttributeBag</code> for
+namespace session attributes.</li>
+<li> Flash API can stores messages in an array so there may be multiple messages
+per flash type. The old <code>Session</code> class API remains without BC break as it
+will allow single messages as before.</li>
+<li> Added basic session meta-data to the session to record session create time,
+last updated time, and the lifetime of the session cookie that was provided
+to the client.</li>
+<li> Request::getClientIp() method doesn&#8217;t take a parameter anymore but bases
+itself on the trustProxy parameter.</li>
+<li> Added isMethod() to Request object.</li>
+<li> [BC BREAK] The methods <code>getPathInfo()</code>, <code>getBaseUrl()</code> and <code>getBasePath()</code> of
+a <code>Request</code> now all return a raw value (vs a urldecoded value before). Any call
+to one of these methods must be checked and wrapped in a <code>rawurldecode()</code> if
+needed.</li>
+</ul>
+
+</body>
+</html>
+

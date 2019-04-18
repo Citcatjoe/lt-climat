@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>{% block title %}Le Temps à 20 ans{% endblock %}</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="assets/css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+		<!-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"> -->
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+
+
+		<link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.min.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/owl.theme.default.min.css" />
+
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="http://assets.letemps.ch/themes/custom/letemps/favicons/apple-touch-icon-57x57.png" />
+	    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://assets.letemps.ch/themes/custom/letemps/favicons/apple-touch-icon-114x114.png" />
+	    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://assets.letemps.ch/themes/custom/letemps/favicons/apple-touch-icon-72x72.png" />
+	    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://assets.letemps.ch/themes/custom/letemps/favicons/apple-touch-icon-144x144.png" />
+	    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="http://assets.letemps.ch/themes/custom/letemps/favicons/apple-touch-icon-60x60.png" />
+	    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="http://assets.letemps.ch/themes/custom/letemps/favicons/apple-touch-icon-120x120.png" />
+	    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="http://assets.letemps.ch/themes/custom/letemps/favicons/apple-touch-icon-76x76.png" />
+	    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="http://assets.letemps.ch/themes/custom/letemps/favicons/apple-touch-icon-152x152.png" />
+	    <link rel="icon" type="image/png" href="http://assets.letemps.ch/themes/custom/letemps/favicons/favicon-196x196.png" sizes="196x196" />
+	    <link rel="icon" type="image/png" href="http://assets.letemps.ch/themes/custom/letemps/favicons/favicon-96x96.png" sizes="96x96" />
+	    <link rel="icon" type="image/png" href="http://assets.letemps.ch/themes/custom/letemps/favicons/favicon-32x32.png" sizes="32x32" />
+	    <link rel="icon" type="image/png" href="http://assets.letemps.ch/themes/custom/letemps/favicons/favicon-16x16.png" sizes="16x16" />
+	    <link rel="icon" type="image/png" href="http://assets.letemps.ch/themes/custom/letemps/favicons/favicon-128.png" sizes="128x128" />
+	    <meta name="application-name" content="&nbsp;"/>
+	    <meta name="msapplication-TileColor" content="#FFFFFF" />
+	    <meta name="msapplication-TileImage" content="http://assets.letemps.ch/themes/custom/letemps/favicons/mstile-144x144.png" />
+	    <meta name="msapplication-square70x70logo" content="http://assets.letemps.ch/themes/custom/letemps/favicons/mstile-70x70.png" />
+	    <meta name="msapplication-square150x150logo" content="http://assets.letemps.ch/themes/custom/letemps/favicons/mstile-150x150.png" />
+	    <meta name="msapplication-wide310x150logo" content="http://assets.letemps.ch/themes/custom/letemps/favicons/mstile-310x150.png" />
+	    <meta name="msapplication-square310x310logo" content="http://assets.letemps.ch/themes/custom/letemps/favicons/mstile-310x310.png" />
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/plugins/TextPlugin.min.js"></script> -->
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> -->
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script> -->
+		{% block metas %}
+
+
+		<meta property="og:title" content="Le Temps de s'engager" />
+		<meta property="og:image" content="{{ app.base_url ~ app.base_path }}/img/share/social.jpg" />
+		<meta property="og:url" content="{{ app.url }}" />
+		<meta property="og:description" content="Pour ses 20 ans, l'âge où l'on s'engage, «Le Temps» se donne une mission" />
+		<meta property="og:type" content="article" />
+		<meta property="fb:app_id" content="100160886777903" />
+		<meta name="twitter:image" content="{{ app.base_url ~ app.base_path }}/img/share/social.jpg" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@letemps" />
+		<meta name="twitter:title" content="Le Temps de s'engager" />
+		<meta name="twitter:description" content="Pour ses 20 ans, l'âge où l'on s'engage, «Le Temps» se donne une mission" />
+		<link rel="image_src" href="{{ app.base_url ~ app.base_path }}/img/share/social.jpg" />
+		{% endblock %}
+
+		<!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+}); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-TQ2B8Q');</script>
+    <!-- End Google Tag Manager -->
+
+	</head>
+
+	<body style="padding-top: {{ navBarOffset }};">
+		<!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQ2B8Q" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+		{# {{ block('bar_brand') }} #}
+
+		<div class="overlay">
+			{# <div class="overlay-container">
+				<div class="img-container">
+					<img src="img/glyph-00.svg" alt="">
+				</div>
+
+				<div class="load-container">
+					<div class="load-container-bar"></div>
+				</div>
+			</div> #}
+
+
+			<!-- <img class="logo-brand" src="img/logo-lt-blanc.svg" alt="">
+			<div class="spinner">
+				<div class="double-bounce1"></div>
+				<div class="double-bounce2"></div>
+			</div> -->
+
+		</div>
+
+		<a href="https://www.letemps.ch" target="_blank"><img src="img/logo-lt-rouge.svg" alt="logo Le Temps" id="logo-lt-header"></a>
+		<img src="img/glyph-00.svg" alt="" id="glyph-big" class="flip flip-00">
+		<img src="img/glyph-01.svg" alt="" id="glyph-big" class="flip flip-01">
+		<img src="img/glyph-02.svg" alt="" id="glyph-big" class="flip flip-02">
+		<img src="img/glyph-03.svg" alt="" id="glyph-big" class="flip flip-03">
+		<img src="img/glyph-04.svg" alt="" id="glyph-big" class="flip flip-04">
+		<img src="img/glyph-05.svg" alt="" id="glyph-big" class="flip flip-05">
+		<img src="img/glyph-06.svg" alt="" id="glyph-big" class="flip flip-06">
+		<img src="img/glyph-07.svg" alt="" id="glyph-big" class="flip flip-07">
+		<img src="img/menu.svg" alt="" class="menu-toggle menu-icon">
+		<img src="img/close.svg" alt="" class="menu-toggle close-icon">
+
+		<aside>
+			<h6>Navigation</h6>
+			<nav>
+				<ul>
+					<li class="link {% if active_page is empty %}is-active{% endif %} c00"><span class="count">00</span><a href="/">Le Temps de s'engager</a></li>
+					<li class="link {% if active_page == '01' %}is-active{% endif %} c01"><span class="count">01</span><a href="/journalisme">Journalisme</a></li>
+					<li class="link {% if active_page == '02' %}is-active{% endif %} c02"><span class="count">02</span><a href="/egalite-homme-femme">Egalité homme-femme</a></li>
+					<li class="link {% if active_page == '03' %}is-active{% endif %} c03"><span class="count">03</span><a href="/ecologie">Ecologie</a></li>
+					<li class="link {% if active_page == '04' %}is-active{% endif %} c04"><span class="count">04</span><a href="/creativite-suisse">Créativité suisse</a></li>
+					<li class="link {% if active_page == '05' %}is-active{% endif %} c05"><span class="count">05</span><a href="/economie-inclusive">Économie inclusive</a></li>
+					<li class="link {% if active_page == '06' %}is-active{% endif %} c06"><span class="count">06</span><a href="/technologie-au-service-de-lhomme">La technologie au service de l'homme</a></li>
+					<li class="link {% if active_page == '07' %}is-active{% endif %} c07"><span class="count">07</span><a href="/suisse-laboratoire-politique">La Suisse, laboratoire politique</a></li>
+				</ul>
+			</nav>
+			<div class="aside--footer">
+				<img src="img/glyph-00.svg" alt="" id="glyph-small" class="flip flip-00">
+				<img src="img/glyph-01.svg" alt="" id="glyph-small" class="flip flip-01">
+				<img src="img/glyph-02.svg" alt="" id="glyph-small" class="flip flip-02">
+				<img src="img/glyph-03.svg" alt="" id="glyph-small" class="flip flip-03">
+				<img src="img/glyph-04.svg" alt="" id="glyph-small" class="flip flip-04">
+				<img src="img/glyph-05.svg" alt="" id="glyph-small" class="flip flip-05">
+				<img src="img/glyph-06.svg" alt="" id="glyph-small" class="flip flip-06">
+				<img src="img/glyph-07.svg" alt="" id="glyph-small" class="flip flip-07">
+				<div class="follow">
+					<span class="follow--social">
+						<a href="https://www.facebook.com/letemps.ch" target="_blank"><i class="fa fa-facebook-f"></i></a>
+						<a href="https://twitter.com/letemps" target="_blank"><i class="fa fa-twitter"></i></a>
+						<a href="https://www.instagram.com/letemps.ch/" target="_blank"><i class="fa fa-instagram"></i></a>
+						<a href="https://www.youtube.com/letemps" target="_blank"><i class="fa fa-youtube"></i></a>
+					</span>
+					<span class="follow--text">
+						<span>Engagez-vous également:</span><br><a href="https://www.letemps.ch/abos" target="_blank">Soutenez une presse de qualité</a>
+					</span>
+				</div>
+			</div>
+		</aside>
+
+		<main id="barba-wrapper">
+			{% block container %}{% endblock %}
+		</main>
+
+		<footer>
+			<a href="https://www.letemps.ch" target="_blank"><img src="img/glyph-00b.svg" alt="" id="glyph-footer"></a>
+			<ul>
+				<li><a href="https://www.letemps.ch/a-propos" target="_blank">À propos</a></li>
+				<li><a href="https://www.letemps.ch/abos" target="_blank">Abonnements</a></li>
+				<li><a href="http://www.admeira.ch/fr/brands/digital/letemps-ch" target="_blank">Publicité</a></li>
+				<li><a href="https://www.letemps.ch/abonnes/services" target="_blank">Services</a></li>
+				<li><a href="https://www.letemps.ch/contact/annuaire" target="_blank">Impressum</a></li>
+				<li><a href="https://www.letemps.ch/protection-donnees" target="_blank">Protections des données</a></li>
+			</ul>
+			<img src="img/gobackup.svg" alt="" id="gobackup">
+		</footer>
+		 {# {{ block('footer_brand') }} #}
+		<script src="assets/js/owl.carousel.min.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/barba.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.4/SmoothScroll.min.js"></script>
+
+	</body>
+
+</html>

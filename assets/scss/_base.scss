@@ -1,0 +1,154 @@
+@charset "UTF-8"; 
+//=====================================================================//
+// COLORS
+//=====================================================================//
+$colorTwitter: #4e9dee;
+
+$color00: #930025;  //LETEMPS
+$color01: #930025;  //JOURNALISME
+$color02: #d32e64;  //ÉGALITÉ HOMME FEMME
+$color03: #2fb312;  //ÉCOLOGIE
+$color04: #00a666;  //CRÉATIVITÉ SUISSE
+$color05: #004da6;  //ÉCONOMIE INCLUSIVE
+$color06: #00a6a3;  //TECHNOLOGIE AU SERVICE DE L'HOMME
+$color07: #a400b3;  //LA SUISSE LABORATOIRE POLITIQUE
+
+// .overlay { background: $color00; } 
+
+nav ul li.c00:hover, nav ul li.c00.is-active { color: $color00; } 
+nav ul li.c01:hover, nav ul li.c01.is-active { color: $color01; } 
+nav ul li.c02:hover, nav ul li.c02.is-active { color: $color02; } 
+nav ul li.c03:hover, nav ul li.c03.is-active { color: $color03; } 
+nav ul li.c04:hover, nav ul li.c04.is-active { color: $color04; } 
+nav ul li.c05:hover, nav ul li.c05.is-active { color: $color05; } 
+nav ul li.c06:hover, nav ul li.c06.is-active { color: $color06; } 
+nav ul li.c07:hover, nav ul li.c07.is-active { color: $color07; } 
+
+nav ul li.is-disabled:hover {  color: initial !important;}  
+
+.themelist article.c00:not(.is-disabled):hover h5, .themelist article.c00:active h5 { color: $color00; } // n'existe pas mais voilà
+.themelist article.c01:not(.is-disabled):hover h5, .themelist article.c01:active h5 { color: $color01; }
+.themelist article.c02:not(.is-disabled):hover h5, .themelist article.c02:active h5 { color: $color02; }
+.themelist article.c03:not(.is-disabled):hover h5, .themelist article.c03:active h5 { color: $color03; }
+.themelist article.c04:not(.is-disabled):hover h5, .themelist article.c04:active h5 { color: $color04; }
+.themelist article.c05:not(.is-disabled):hover h5, .themelist article.c05:active h5 { color: $color05; }
+.themelist article.c06:not(.is-disabled):hover h5, .themelist article.c06:active h5 { color: $color06; }
+.themelist article.c07:not(.is-disabled):hover h5, .themelist article.c07:active h5 { color: $color07; }
+
+.c00 .text-color { color: $color00; }
+.c01 .text-color { color: $color01; }
+.c02 .text-color { color: $color02; }
+.c03 .text-color { color: $color03; }
+.c04 .text-color { color: $color04; }
+.c05 .text-color { color: $color05; }
+.c06 .text-color { color: $color06; }
+.c07 .text-color { color: $color07; }
+
+.c00 .background-color { background-color: $color00; }
+.c01 .background-color { background-color: $color01; }
+.c02 .background-color { background-color: $color02; }
+.c03 .background-color { background-color: $color03; }
+.c04 .background-color { background-color: $color04; }
+.c05 .background-color { background-color: $color05; }
+.c06 .background-color { background-color: $color06; }
+.c07 .background-color { background-color: $color07; }
+
+.c00 .timeline:before { background-color: $color00; }
+.c01 .timeline:before { background-color: $color01; }
+.c02 .timeline:before { background-color: $color02; }
+.c03 .timeline:before { background-color: $color03; }
+.c04 .timeline:before { background-color: $color04; }
+.c05 .timeline:before { background-color: $color05; }
+.c06 .timeline:before { background-color: $color06; }
+.c07 .timeline:before { background-color: $color07; }
+
+.c00 .timeline .timeline-entry-dot { border: 3px solid $color00; }
+.c01 .timeline .timeline-entry-dot { border: 3px solid $color01; }
+.c02 .timeline .timeline-entry-dot { border: 3px solid $color02; }
+.c03 .timeline .timeline-entry-dot { border: 3px solid $color03; }
+.c04 .timeline .timeline-entry-dot { border: 3px solid $color04; }
+.c05 .timeline .timeline-entry-dot { border: 3px solid $color05; }
+.c06 .timeline .timeline-entry-dot { border: 3px solid $color06; }
+.c07 .timeline .timeline-entry-dot { border: 3px solid $color07; }
+
+.c00 .timeline .triangle { border-top: 3px solid $color00; border-right: 3px solid $color00; }
+.c01 .timeline .triangle { border-top: 3px solid $color01; border-right: 3px solid $color01; }
+.c02 .timeline .triangle { border-top: 3px solid $color02; border-right: 3px solid $color02; }
+.c03 .timeline .triangle { border-top: 3px solid $color03; border-right: 3px solid $color03; }
+.c04 .timeline .triangle { border-top: 3px solid $color04; border-right: 3px solid $color04; }
+.c05 .timeline .triangle { border-top: 3px solid $color05; border-right: 3px solid $color05; }
+.c06 .timeline .triangle { border-top: 3px solid $color06; border-right: 3px solid $color06; }
+.c07 .timeline .triangle { border-top: 3px solid $color07; border-right: 3px solid $color07; }
+
+.c00 .timeline .owl-theme .owl-dots .owl-dot.active span, .c00 .timeline  .owl-theme .owl-dots .owl-dot:hover span { background: $color00; }
+.c01 .timeline .owl-theme .owl-dots .owl-dot.active span, .c01 .timeline  .owl-theme .owl-dots .owl-dot:hover span { background: $color01; }
+.c02 .timeline .owl-theme .owl-dots .owl-dot.active span, .c02 .timeline  .owl-theme .owl-dots .owl-dot:hover span { background: $color02; }
+.c03 .timeline .owl-theme .owl-dots .owl-dot.active span, .c03 .timeline  .owl-theme .owl-dots .owl-dot:hover span { background: $color03; }
+.c04 .timeline .owl-theme .owl-dots .owl-dot.active span, .c04 .timeline  .owl-theme .owl-dots .owl-dot:hover span { background: $color04; }
+.c05 .timeline .owl-theme .owl-dots .owl-dot.active span, .c05 .timeline  .owl-theme .owl-dots .owl-dot:hover span { background: $color05; }
+.c06 .timeline .owl-theme .owl-dots .owl-dot.active span, .c06 .timeline  .owl-theme .owl-dots .owl-dot:hover span { background: $color06; }
+.c07 .timeline .owl-theme .owl-dots .owl-dot.active span, .c07 .timeline  .owl-theme .owl-dots .owl-dot:hover span { background: $color07; }
+
+//=====================================================================//
+// BREAKPOINTS (BOOTSTRAP)
+//=====================================================================//
+@mixin breakpoint($class) {
+  @if $class == xs {
+    @media (max-width: 450px) { @content; }
+  }
+ 
+  @else if $class == sm {
+    @media (max-width: 576px) { @content; } 
+  }
+ 
+  @else if $class == md {
+    @media (max-width: 768px) { @content; }
+  }
+ 
+  @else if $class == lg {
+    @media (max-width: 992px) { @content; }
+  }
+
+  @else if $class == xl {
+    @media (max-width: 1440px) { @content; }
+  }
+ 
+  @else {
+    @warn "Breakpoint mixin supports: xs, sm, md, lg, xl";
+  }
+}
+
+//=====================================================================//
+// SOME BASE STYLES
+//=====================================================================//
+html, body
+{
+  // en perspective d'embed sur lt.ch
+  // - dans mdb, mettre un media-slot - iframe
+  // - juste mettre cette propriété ci-dessous et normalament pas besoin de "scrolling='no'" comme atribut iframe
+  // - si je veux la scrollbar en dehors du rapport 16/9, il faut commencer à guezner avec pym
+  // overflow: hidden;
+}
+html 
+{ 
+    font-size: 16px;
+   
+
+    @include breakpoint(xl) {
+    }
+}
+ 
+body 
+{
+  background:rgb(231, 231, 231);
+  position: relative;
+  min-height: 100vh;
+  line-height: 1em;
+   background: url('../../img/aside-bg.jpg'); 
+}
+
+img 
+{ 
+  display:block; 
+  width: 100%; 
+}

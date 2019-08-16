@@ -49,13 +49,15 @@ $path = ltrim($uri, '/');
 $aliases  = [
 	'' => '00',
 	'temps-engager' => '00',
-	'journalisme' => '01',
-	'egalite-homme-femme' => '02',
-	'ecologie' => '03',
-	'creativite-suisse' => '04',
-	'economie-inclusive' => '05',
-	'technologie-au-service-de-lhomme' => '06',
-	'suisse-laboratoire-politique' => '07'
+	'monde' => '01',
+	'suisse' => '02',
+	'economie' => '03',
+	'opinions' => '04',
+	'culture' => '05',
+	'sciences' => '06',
+	'sport' => '07',
+	'societe' => '08',
+	'hyperlien' => '09'
 ];
 
 echo '<!--' . $path . ' -->';

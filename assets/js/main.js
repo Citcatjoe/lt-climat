@@ -1,96 +1,56 @@
 jQuery(document).ready(function($) {
 
-    // $('.overlay').fadeOut('slow');
     var overlayTl = new TimelineMax(),
         $overlay = $('.overlay');
-        // $imgContainer = $('.img-container'),
-        // $loadContainer = $('.load-container'),
-        // $loadContainerBar = $('.load-container-bar');
-
-        // overlayTl
-        //     .set($imgContainer, {autoAlpha: 0, y: '-=30px'})
-        //     .set($loadContainer, { autoAlpha: 0, y: '-=30px' })
-        //     .set($loadContainerBar, { width: '0px' });
+       
 
         overlayTl
-            // .to($loadContainer, 0.750, { autoAlpha: 1, y: "+=30px", ease: Power4.easeInOut })
-            // .to($imgContainer, 0.750, { autoAlpha: 1, y: "+=30px", ease: Power4.easeInOut }, '-=0.5')
-            // .to($loadContainerBar, 0.750, { width: '70px', ease: Power0.easeNone }, '+=0.750')
-            // .to($loadContainerBar, 0.750, { width: '90px', ease: Power0.easeNone })
-            // .to($loadContainerBar, 0.1, { width: '112px', ease: Power0.easeNone })
-
-            // .to($loadContainerBar, 0.250, { opacity: 0.5, ease: Power0.easeNone })
-            // .to($loadContainerBar, 0.250, { opacity: 1, ease: Power0.easeNone })
-
-            // .to($loadContainer, 0.750, { autoAlpha: 0, y: "+=30px", ease: Back.easeInOut })
-            // .to($imgContainer, 0.750, { autoAlpha: 0, y: "+=30px", ease: Back.easeOut }, '-=0.26');
-            // .to($overlay, 0.5, { autoAlpha: 0, ease: Power4.easeInOut }, '-=0.75');
             .to($overlay, 0.5, { autoAlpha: 0, ease: Power4.easeInOut }, '+=1.00');
 
     
     
-    Barba.Pjax.start();
-    var FadeTransition = Barba.BaseTransition.extend({
-        start: function() {
-            /**
-             * This function is automatically called as soon the Transition starts
-             * this.newContainerLoading is a Promise for the loading of the new container
-             * (Barba.js also comes with an handy Promise polyfill!)
-             */
+    // Barba.Pjax.start();
+    // var FadeTransition = Barba.BaseTransition.extend({
+    //     start: function() {
+           
+    //         Promise
+    //         .all([this.newContainerLoading, this.fadeOut()])
+    //         .then(this.fadeIn.bind(this));
+    //     },
 
-            // As soon the loading is finished and the old page is faded out, let's fade the new page
-            Promise
-            .all([this.newContainerLoading, this.fadeOut()])
-            .then(this.fadeIn.bind(this));
-        },
+    //     fadeOut: function() {
+           
 
-        fadeOut: function() {
-            /**
-             * this.oldContainer is the HTMLElement of the old Container
-             */
+    //         return $(this.oldContainer).animate({ opacity: 0 }).promise();
+    //     },
 
-            return $(this.oldContainer).animate({ opacity: 0 }).promise();
-        },
+    //     fadeIn: function() {
+          
 
-        fadeIn: function() {
-            /**
-             * this.newContainer is the HTMLElement of the new Container
-             * At this stage newContainer is on the DOM (inside our #barba-container and with visibility: hidden)
-             * Please note, newContainer is available just after newContainerLoading is resolved!
-             */
+    //         var _this = this;
+    //         var $el = $(this.newContainer);
 
-            var _this = this;
-            var $el = $(this.newContainer);
+    //         $(this.oldContainer).hide();
 
-            $(this.oldContainer).hide();
+    //         $el.css({                     
+    //         visibility : 'visible',
+    //         opacity : 0
+    //         });
 
-            $el.css({                     
-            visibility : 'visible',
-            opacity : 0
-            });
+    //         $el.animate({ opacity: 1 }, 400, function() {
+          
 
-            $el.animate({ opacity: 1 }, 400, function() {
-            /**
-             * Do not forget to call .done() as soon your transition is finished!
-             * .done() will automatically remove from the DOM the old Container
-             */
-
-            _this.done();
-            closeMenuIfMobile();
-            initSliders();
-            });
-        }
-    });
-    /**
-     * Next step, you have to tell Barba to use the new Transition
-     */
-    Barba.Pjax.getTransition = function() {
-        /**
-         * Here you can use your own logic!
-         * For example you can use different Transition based on the current page or link...
-         */
-        return FadeTransition;
-    };
+    //         _this.done();
+    //         closeMenuIfMobile();
+    //         initSliders();
+    //         });
+    //     }
+    // });
+   
+    // Barba.Pjax.getTransition = function() {
+       
+    //     return FadeTransition;
+    // };
 
     function initSliders(){
         $('.slider').owlCarousel({

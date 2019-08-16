@@ -1,68 +1,76 @@
 {% extends "index.html.twig" %}
 
 {% block metas %}
-<meta property="og:title" content="Le Temps de s'engager" />
+<meta property="og:title" content="L'urgence climatique" />
 <meta property="og:image" content="{{ app.base_url ~ app.base_path }}/img/share/social.jpg" />
 <meta property="og:url" content="{{ app.url }}" />
-<meta property="og:description" content="Pour ses 20 ans, l'âge où l'on s'engage, «Le Temps» se donne une mission" />
+<meta property="og:description" content="Comment passer de l'analyse à l'action?" />
 <meta property="og:type" content="article" />
 <meta property="fb:app_id" content="100160886777903" />
 <meta name="twitter:image" content="{{ app.base_url ~ app.base_path }}/img/share/social.jpg" /> 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@letemps" />
-<meta name="twitter:title" content="Le Temps de s'engager" />
-<meta name="twitter:description" content="Pour ses 20 ans, l'âge où l'on s'engage, «Le Temps» se donne une mission" />
+<meta name="twitter:title" content="L'urgence climatique" />
+<meta name="twitter:description" content="Comment passer de l'analyse à l'action?" />
 <link rel="image_src" href="{{ app.base_url ~ app.base_path }}/img/share/social.jpg" />
 {% endblock %}
 
 {% block container %}
 <div class="barba-container">
     <div class="c00">
-        <h6>Le Temps a 20 ans </h6>
-        <h1 class="text-color"><span class="count">00</span>Le Temps<br>de s'engager.</h1>
-        <span class="date">— (16 mars - 17 novembre)</span>
-        <h2>Pour ses 20 ans, «Le Temps» se donne une mission</h2>
-        <p class="margin2"><i>Le Temps</i> a 20 ans en 2018, l'âge où l'on s'engage. La presse n'a jamais été aussi menacée: révolution technologique, éparpillement des audiences, fragmentation des intérêts du public comptent comme autant de menaces sur le modèle d'un journal tel que <i>Le Temps</i>. Mais c'est aussi pour toutes ces raisons qu'un média qui se veut le représentant de la voix de la Suisse francophone ici et dans le monde n'a jamais été aussi important.</p>
-        <p class="margin1">Il s'agit d'avoir l'ambition de pratiquer le meilleur journalisme avec les outils technologiques du moment, d’organiser des événements interpellant notre communauté de lecteurs et de leur apporter de la valeur ajoutée. Désormais, notre principale source de revenus vient des lecteurs et cette tendance va se renforcer, il faut donc encore mieux comprendre ceux qui nous lisent pour mieux les servir. </p>
-        <p class="margin2">En 2018, le journal a décidé de s’investir: non seulement en fêtant l'anniversaire du titre mais aussi en soutenant toute une série de causes pour lesquelles la rédaction est prête à s’engager. Il faut que 2018 ne soit pas seulement la célébration du <i>Temps</i> passé, mais aussi l'occasion de réaffirmer notre identité et d'avoir de l'impact à la fois en traitant les sujets et en choisissant de faire évoluer des points qui nous tiennent à cœur, dans le débat public voire dans nos propres fonctionnements.</h2>
-        <p class="margin1">Les 20 ans seront l'occasion de soutenir sept causes qu'il ne faudra pas seulement interroger à travers des experts mais dont il faudra aussi inciter les lecteurs à vivre l’expérience.</p>
+        <!-- <h6>Le Temps a 20 ans </h6> -->
+        <h1 class="text-color"><span class="count">00</span>L'urgence<br>climatique</h1>
+        <!-- <span class="date">— (16 mars - 17 novembre)</span> -->
+        <h2>Comment passer de l'analyse à l'action?</h2>
+        <p class="margin2">Quelle est la part de décisions individuelles et celles qui relèvent de choix politiques? Pourquoi la complexité du défi ne doit pas nous décourager? Les réponses à apporter au défi climatique s'avèrent aussi variées que complexes.</p>
+        <p class="margin1">Découvrez une série d'enquêtes sur le thème de la transition écologique aussi bien sous les angles politique, économique, scientifique, culturel ou même sportif – voir les choix à gauche.</p>
        
-        <h2>Les 7 causes</h2> 
+        <h2>Rubriques impliquées</h2> 
         <div class="spacer-md"></div>
         <div class="themelist">
             <article class="margin2 c01">
                 <span class="count">01</span>
-                <h5><a href="/journalisme" data-menu="01">Journalisme</a></h5> 
+                <h5><a href="/monde" data-menu="01">Monde</a></h5> 
                 <span class="date">— Dès le 19 mars</span>
             </article>
-            <article class="margin1 c02">
+            <article class="margin1 c01">
                 <span class="count">02</span>
-                <h5><a href="/egalite-homme-femme" data-menu="02">Egalité homme-femme</a></h5> 
+                <h5><a href="/suisse" data-menu="02">Suisse</a></h5> 
                 <span class="date">— Dès le 16 avril</span>
             </article>
-            <article class="margin2 c03">
+            <article class="margin2 c01">
                 <span class="count">03</span>
-                <h5><a href="/ecologie" data-menu="03">Ecologie</a></h5> 
+                <h5><a href="/economie" data-menu="03">Économie</a></h5> 
                 <span class="date">— Dès le 21 mai</span>
             </article>
-            <article class="margin1 c04">
+            <article class="margin1 c01">
                 <span class="count">04</span>
-                <h5><a href="/creativite-suisse" data-menu="04">Créativité suisse</a></h5>
+                <h5><a href="/opinions" data-menu="04">Opinions</a></h5>
                 <span class="date">— Dès le 18 juin</span>
             </article>
-            <article class="margin2 c05">
+            <article class="margin2 c01">
                 <span class="count">05</span>
-                <h5><a href="/economie-inclusive" data-menu="05">Économie inclusive</a></h5>
+                <h5><a href="/culture" data-menu="05">Culture</a></h5>
                 <span class="date">— Dès le 20 août</span>
             </article>
-            <article class="margin1 c06">
+            <article class="margin1 c01">
                 <span class="count">06</span>
-                <h5><a href="/technologie-au-service-de-lhomme" data-menu="06">La technologie au service de l'homme</a></h5>
+                <h5><a href="/sciences" data-menu="06">Sciences</a></h5>
                 <span class="date">— Dès le 17 septembre</span>
             </article>
-            <article class="margin2 c07">
+            <article class="margin2 c01">
                 <span class="count">07</span>
-                <h5><a href="/suisse-laboratoire-politique" data-menu="07">La Suisse, laboratoire politique</a></h5>
+                <h5><a href="/sport" data-menu="07">Sport</a></h5>
+                <span class="date">— Dès le 15 octobre</span>
+            </article>
+            <article class="margin1 c01">
+                <span class="count">08</span>
+                <h5><a href="/societe" data-menu="08">Société</a></h5>
+                <span class="date">— Dès le 17 septembre</span>
+            </article>
+            <article class="margin2 c01">
+                <span class="count">09</span>
+                <h5><a href="/hyperlien" data-menu="09">Hyperlien</a></h5>
                 <span class="date">— Dès le 15 octobre</span>
             </article>
         </div>
